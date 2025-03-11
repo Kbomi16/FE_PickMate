@@ -1,26 +1,64 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #5097fa;
+  --color-custom-black: #17171c;
+  --color-custom-gray-100: #6e6e82;
+  --color-custom-gray-200: #9fa6b2;
+  --color-custom-gray-300: #21212a;
+  --color-custom-white: #f1f1f5;
+  --color-custom-indigo: #5363ff;
+  --color-custom-yellow: #ffc83c;
+  --color-custom-green: #05d58b;
+  --color-custom-pink: #ff2f9f;
+  --color-custom-red: #ff0000;
+  --color-custom-gradation-start: #5097fa;
+  --color-custom-gradation-end: #5363ff;
+}
+
+@layer utilities {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    background-color: transparent !important;
+    -webkit-text-fill-color: var(--color-custom-white) !important;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #17171b;
+  --foreground: #ededed;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #17171b;
     --foreground: #ededed;
   }
+}
+
+* {
+  font-family: 'Pretendard-Regular';
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Pretendard-Regular', Arial, Helvetica, sans-serif;
 }
